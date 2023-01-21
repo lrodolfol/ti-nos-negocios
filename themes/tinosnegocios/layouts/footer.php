@@ -60,7 +60,7 @@
     <!-- copyright -->
     <section class="w3l-copyright text-center">
         <div class="container">
-            <p class="copy-footer-29">© 2022 TI NOS NEGÓCIOS. All rights reserved.</p>
+            <p class="copy-footer-29">© 2023 TI NOS NEGÓCIOS. A Deus seja dado todo louvor</p>
         </div>
 
         <!-- move top -->

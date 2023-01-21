@@ -11,7 +11,6 @@ use Source\Models\Faq\Question;
 use Source\Models\Post;
 use Source\Core\Session;
 
-
 class Web extends Controller {
 
     public function __construct() {
@@ -21,6 +20,7 @@ class Web extends Controller {
     /*
      * SITES ROUTES
      */
+
     public function home(): void {
         $head = $this->seo->render(
                 "TI NOS NEGÓCIOS - Literalmente Presente!",
@@ -39,84 +39,101 @@ class Web extends Controller {
             "testimonials" => $testimonials
         ]);
     }
-    
-    public function about() : void {
+
+    public function about(): void {
         $head = [
-                "TI NOS NEGÓCIOS - Literalmente Presente ",
-                CONF_SITE_DESC,
-                url("/about"),
-                theme("/assets/images/share.png")
+            "TI NOS NEGÓCIOS - Literalmente Presente ",
+            CONF_SITE_DESC,
+            url("/about"),
+            theme("/assets/images/share.png")
         ];
         echo $this->view->render("about-us", [
             "head" => $head
         ]);
     }
 
-    public function webSystem() : void {
+    public function webSystem(): void {
         $head = [
             "TI NOS NEGÓCIOS - Literalmente Presente",
             CONF_SITE_DESC,
-            url("/sistemas-web"),
+            url("/web-system"),
             theme("/assets/images/share.png")
         ];
 
         echo $this->view->render('web-system', [
             "head" => $head,
             "title" => "Sistemas Web",
-            "desc" => "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
+            "desc" => "Solucionando e atendendo necessidades com operações robustas de forma online."
         ]);
     }
 
-    public function softwareDesktop() : void {
+    public function softwareDesktop(): void {
         $head = [
             "TI NOS NEGÓCIOS - Literalmente Presente",
             CONF_SITE_DESC,
-            url("/sistemas-web"),
+            url("/sofware-desktop"),
             theme("/assets/images/share.png")
         ];
 
-        echo $this->view->render('web-system', [
+        echo $this->view->render('software-desktop', [
             "head" => $head,
             "title" => "Sofwares Desktop",
             "desc" => "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
         ]);
     }
 
-    public function sites() : void {
+    public function sites(): void {
         $head = [
             "TI NOS NEGÓCIOS - Literalmente Presente",
             CONF_SITE_DESC,
-            url("/sistemas-web"),
+            url("/sites"),
             theme("/assets/images/share.png")
         ];
 
-        echo $this->view->render('web-system', [
+        echo $this->view->render('sites', [
             "head" => $head,
             "title" => "Criação e edição de sites",
             "desc" => "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
         ]);
     }
 
-    public function mobile() : void {
+    public function mobile(): void {
         $head = [
             "TI NOS NEGÓCIOS - Literalmente Presente",
             CONF_SITE_DESC,
-            url("/sistemas-web"),
+            url("/mobile"),
             theme("/assets/images/share.png")
         ];
 
-        echo $this->view->render('web-system', [
+        echo $this->view->render('mobile', [
             "head" => $head,
             "title" => "Mobile app",
             "desc" => "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
         ]);
     }
 
+    public function realTimeProject(): void {
+        $head = [
+            "TI NOS NEGÓCIOS - Literalmente Presente",
+            CONF_SITE_DESC,
+            url("/mobile"),
+            theme("/assets/images/share.png")
+        ];
+        
+        echo $this->view->render('real-time-projects', [
+           "head"  => $head,
+            "title" => "Acompanhamento em tempo real",
+            "desc" => "Acompanhe em rempo real seu projeto, desde a solicitação até a entrega"
+        ]);
+        
+        echo "projeto em tempo real";
+    }
+
     /*
      * BLOG ROUTES
      */
-    public function blog()
-    {
+
+    public function blog() {
         $head = [
             "TI NOS NEGÓCIOS - BLOG",
             CONF_SITE_DESC,
@@ -135,7 +152,6 @@ class Web extends Controller {
             "blog" => $blog->limit($pager->limit())->offset($pager->offset())->fetch(true),
             "paginator" => $pager->render()
         ]);
-
     }
 
     public function blogSearch(array $data): void {
@@ -154,10 +170,10 @@ class Web extends Controller {
         $page = (filter_var($data['page'], FILTER_VALIDATE_INT) >= 1 ? $data['page'] : 1);
 
         $head = $this->seo->render(
-            "Pesquisa por {$search} - " . CONF_SITE_NAME,
-            "Confira os resultados de sua pesquisa para {$search}",
-            url("/blog/buscar/{$search}/{$page}"),
-            theme("/assets/images/share.jpg")
+                "Pesquisa por {$search} - " . CONF_SITE_NAME,
+                "Confira os resultados de sua pesquisa para {$search}",
+                url("/blog/buscar/{$search}/{$page}"),
+                theme("/assets/images/share.jpg")
         );
 
         $blogSearch = (new Post())->find("(title LIKE :s OR subtitle LIKE :s)", "s=%{$search}%");
@@ -183,31 +199,6 @@ class Web extends Controller {
             "paginator" => $pager->render()
         ]);
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     public function error(array $data): void {
         $error = new \stdClass();

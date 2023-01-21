@@ -193,13 +193,14 @@ function theme(string $path = null): string {
     return CONF_URL_BASE . "/themes" . CONF_VIEW_THEME;
 }
 
-function image(string $image, int $width, int $height = null) : string {
+function image(string $image, int $width = null, int $height = null) : string {
     //RETIRAR QUANDO ADICIONAR BIBLIOTECA DE IMG
-    //$path = url() . "/Storage/images" . $image;
-    //return $path;
+    $path = url() . "/Storage/" . $image;
+    return $path;
 
     $Thumb = new Source\Support\Thumb();
-    $path = url() . "/" . $Thumb->make($image, $width, $height);
+    //$path = url() . "/" . $Thumb->make($image, $width, $height);
+    $path = $Thumb->make($image, $width, $height);
     return $path;
 }
 

@@ -8,7 +8,7 @@
         <div class="row main-cont-wthree-2 align-items-center">
             <div class="col-lg-6 feature-grid-left pr-lg-5">
                 <!-- <h5 class="title-small">Every day brings new challenges</h5> -->
-                <span class="title-small">Atendendo a pequenos serviços</span>
+                <span class="title-small">Atendendo a pequenos e médios serviços</span>
                 <h3 class="title-big mb-4">Soluções que podem cooperar naquilo que você precisa. Conheça e comprove</h3>
                 <!-- <p class="text-para">Soluções que podem cooperar naquilo que você precisa. Conheça e comprove                </p> -->
                 <a href="about.html" class="btn btn-style btn-tnn-info mt-lg-5 mt-4">Ver todas</a>
@@ -19,25 +19,25 @@
                         <div class="icon">
                             <img src="<?= theme("assets/images/webDev.png"); ?>" alt="" class="img-fluid">
                         </div>
-                        <h4><a href="<?= url(""); ?>" class="title-head">Sistemas WEBs</a></h4>
+                        <h4><a href="<?= url("sistemas-web"); ?>" class="title-head">Sistemas WEBs</a></h4>
                     </div>
                     <div class="grids-1 box-wrap">
                         <div class="icon">
                             <img src="<?= theme("assets/images/webResponsive.png"); ?>" alt="" class="img-fluid">
                         </div>
-                        <h4><a href="<?= url(""); ?>" class="title-head">Criação e edição de sites</a></h4>
+                        <h4><a href="<?= url("sites"); ?>" class="title-head">Criação e edição de sites</a></h4>
                     </div>
                     <div class="grids-1 box-wrap">
                         <div class="icon">
                             <img src="<?= theme("assets/images/sofWeb.png"); ?>" alt="" class="img-fluid">
                         </div>
-                        <h4><a href="<?= url(""); ?>" class="title-head">Sofwares Dektop</a></h4>
+                        <h4><a href="<?= url("software-desktop"); ?>" class="title-head">Sofwares Dektop</a></h4>
                     </div>
                     <div class="grids-1 box-wrap">
                         <div class="icon">
                             <img src="<?= theme("assets/images/appPhone.png"); ?>" alt="" class="img-fluid">
                         </div>
-                        <h4><a href="<?= url(""); ?>" class="title-head">Criação de App</a></h4>
+                        <h4><a href="<?= url("mobile"); ?>" class="title-head">Criação de App</a></h4>
                     </div>
                 </div>
             </div>
@@ -103,7 +103,7 @@
                     <p>Quer conhecer mais?</p>
 
                     <div style="margin-top: 20px" class="cta-btn" data-animation="fadeInDown" data-delay="1s">
-                        <a href="#url" class="btn btn-style btn-tnn-info">Conhecer mais</a>
+                        <a href=<?=url("em-tempo-real");?> class="btn btn-style btn-tnn-info">Conhecer mais</a>
                     </div>
                 </div>
             </div>

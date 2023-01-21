@@ -20,6 +20,7 @@ $route->get("/sistemas-web", "Web:webSystem");
 $route->get("/software-desktop", "Web:softwareDesktop");
 $route->get("/sites", "Web:sites");
 $route->get("/mobile", "Web:mobile");
+$route->get("/em-tempo-real", "Web:realTimeProject");
 
 //blog
 $route->group("/blog");

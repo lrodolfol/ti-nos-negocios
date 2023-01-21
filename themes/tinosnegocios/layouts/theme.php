@@ -56,6 +56,9 @@
                             <li class="nav-item @@contact__active">
                                 <a class="nav-link" href="#contato">Contato</a>
                             </li>
+                            <li class="nav-item @@contact__active">
+                                <a class="nav-link" href=<?=url("blog");?>>Blog</a>
+                            </li>
                         </ul>
                     </div>
 
