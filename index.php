@@ -42,8 +42,9 @@ $route->get('/', "App:home");
 /*
  * ERROR ROUTES
  */
-$route->namespace("Source\App")->group("/ops");
+$route->namespace("Source\Error")->group("/ops");
 $route->get("/{errcode}", "Error:error");
+$route->get("/ops/problemas", "Error:problemas");
 
 /*
  * ROUTE

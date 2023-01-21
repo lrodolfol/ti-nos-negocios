@@ -9,6 +9,10 @@ class Error extends Controller {
     public function __construct() {
         parent::__construct(__DIR__ . "/../../themes/" . CONF_VIEW_THEME . "/");
     }
+    
+    public function problemas($param) : void {
+        echo "Estamos enfretando problemas";
+    }
 
     public function error(array $data): void {
         $error = new \stdClass();
