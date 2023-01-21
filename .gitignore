@@ -2,4 +2,4 @@
 /vendor
 /.idea
 /composer.lock
-/source/Support/Config.php
+source/Support/Config.php
