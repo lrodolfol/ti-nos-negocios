@@ -1,0 +1,14 @@
+version: 0.0
+os: linux
+files:
+  - source: ./
+    destination: /home/tnnsite
+hooks:
+  BeforeInstall:
+    - location: scripts_deploy_aws/before_install.sh
+      timeout: 100
+      runas: root
+  AfterInstall:
+    - location: scripts_deploy_aws/after_install.sh
+      timeout: 100
+      runas: root
